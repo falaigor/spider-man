@@ -1,13 +1,128 @@
 .container {
   max-width: 1440px;
+  height: 80vh;
   margin: 0 auto;
   padding: 36px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+
+  @include responsive(){
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 .container-item-1 {
-
+  max-width: 576px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.container-item-2 {
-  
+.flex {
+  display: flex;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.spiderman {
+  width: 140%;
+  transform: translate3d(-200px,0,0);
+
+  @include responsive(){
+    width: 100%;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 3px;
+  transform: skewX(-10deg);
+  text-transform: uppercase;
+  background: linear-gradient(267.72deg, #F02A2F 0.88%, #EA1D22 100%);
+  position: relative;
+  transition: all .7s ease;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 20%;
+    height: 70%;
+    border-radius: 3px;
+    border-top: 3px solid $white;
+    border-left: 3px solid $white;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    opacity: 0;
+    transition: all .7s ease;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 20%;
+    height: 70%;
+    border-radius: 3px;
+    border-bottom: 3px solid $white;
+    border-right: 3px solid $white;
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    opacity: 0;
+    transition: all .7s ease;
+  }
+
+  &:hover {
+    transform: skewX(-10deg) scale(1.05);
+    &::after {
+      opacity: 1;
+    }
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 3px;
+  transform: skewX(-10deg);
+  text-transform: uppercase;
+  border: 2px solid $red ;
+  background: transparent;
+  position: relative;
+  transition: all .7s ease;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(267.72deg, #F02A2F 0.88%, #EA1D22 100%);
+    z-index: -1;
+    transition: all .7s ease;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
