@@ -334,20 +334,6 @@ header {
   height: 40px;
 }
 
-.bx {
-  width: 48px;
-  height: 48px;
-  background-color: white;
-  border-radius: 8px;
-  display: none;
-}
-
-@media screen and (max-width: 960px) {
-  .bx {
-    display: block;
-  }
-}
-
 .nav-social {
   display: -webkit-box;
   display: -ms-flexbox;
