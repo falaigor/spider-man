@@ -53,6 +53,10 @@ p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-top: 144px;
     height: auto;
   }
 }
@@ -192,6 +196,56 @@ p {
   height: 100%;
 }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bg-video::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: linear-gradient(110deg, #0A0C10 25%, rgba(11, 12, 16, 0.8) 50%, #0A0C10 70%);
+}
+
+.bg-loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(225deg, #EA1D22 0%, #B31317 100%);
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
 header {
   width: 100%;
   padding-top: 16px;
@@ -320,6 +374,46 @@ header {
   fill: #F02A2F;
   -webkit-transform: translate3d(0, -3px, 0);
           transform: translate3d(0, -3px, 0);
+}
+
+.logo-spiderman {
+  fill: transparent;
+  -webkit-animation: logo-spiderman 5s ease infinite alternate;
+          animation: logo-spiderman 5s ease infinite alternate;
+}
+
+@-webkit-keyframes logo-spiderman {
+  0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 100;
+    fill: transparent;
+  }
+  25% {
+    stroke-width: 1;
+    stroke-dasharray: 100 0;
+    fill: transparent;
+  }
+  60%, 100% {
+    stroke-width: 0.3;
+    fill: #E5E9EF;
+  }
+}
+
+@keyframes logo-spiderman {
+  0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 100;
+    fill: transparent;
+  }
+  25% {
+    stroke-width: 1;
+    stroke-dasharray: 100 0;
+    fill: transparent;
+  }
+  60%, 100% {
+    stroke-width: 0.3;
+    fill: #E5E9EF;
+  }
 }
 
 .s-0 {
